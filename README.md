@@ -117,7 +117,7 @@ This section identifies the sender and recipient of the packet at the network le
 ## Additional Information:
 
 - This packet is part of a larger exchange that sets up the secure connection between the client (my machine) and the server (Google).
-- 
+
 <img width="1046" alt="HTTPS filter (1)" src="https://github.com/user-attachments/assets/e5bf9665-0ed5-426a-b8d0-ffc2771c354e">
 
 I decided I will capture and analyze **HTTP traffic** as well, which is unencrypted and transmitted over **port 80**.
@@ -148,7 +148,7 @@ I pressed **Enter** to apply the filter, which displayed only HTTP packets.
 
 - Used after capturing.
 - Let me analyze specific packets from everything I captured, without removing any data.
-- 
+
 <img width="1277" alt="Display Filter" src="https://github.com/user-attachments/assets/bcb476eb-7ecf-4eb1-8b59-186413cc9faf">
 
 This filter I applied below is to show packets related to **TLS handshake Client Hello messages**. These messages are crucial for establishing a secure HTTPS connection between the client (machine) and the server (the website I am visiting).
@@ -164,7 +164,7 @@ This filter I applied below is to show packets related to **TLS handshake Client
 
 - This filter below shows you **all packets** where either the **source IP** or the **destination IP** is `142.250.185.68`.
 - This is useful when focusing on all communication between the machine and this specific IP address, which is likely associated with a service or website (in this case, **Google**).
-- 
+
 <img width="1047" alt="ip addr == " src="https://github.com/user-attachments/assets/8b2f875d-6e06-4a7f-8ccb-636658b227c6">
 
 This filter shows you **all packets where the source IP address** is `142.250.185.196`.
@@ -176,7 +176,7 @@ This filter shows you **all packets where the source IP address** is `142.250.18
 ### Troubleshooting Network Issues
 
 - By focusing only on traffic from this server, I can examine whether there are any retransmissions, packet loss, or delays coming from this specific source. The **duplicate ACKs** might suggest network congestion or issues with data transmission.
-- 
+
 <img width="1030" alt="ip src" src="https://github.com/user-attachments/assets/89db4d31-f73c-48d1-b31c-26c8327321c7">
 
 This filter shows **only the packets where the destination IP address** is `142.250.185.196`.
@@ -184,7 +184,7 @@ This filter shows **only the packets where the destination IP address** is `142.
 - Only capturing packets that are **being sent to** the IP address `142.250.185.196` (Google-related server).
 - It helps isolate the traffic going in one direction (from client to server).
 - This is useful for troubleshooting issues with data being sent to the server, such as slow uploads, incomplete transfers, or connection timeouts.
-- 
+
 <img width="1037" alt="ip dst" src="https://github.com/user-attachments/assets/d7be9088-3ae8-4f4f-9b31-8ca752a325db">
 
 The logical operator `or` between the two conditions means that Wireshark will display any packet where **either** condition is true. So, it will show:
@@ -229,7 +229,7 @@ This is useful for fine-tuning network traffic captures, especially when dealing
 This filter captures all DNS (Domain Name System) traffic. DNS is responsible for translating human-readable domain names (like `www.google.com`) into IP addresses that computers use to identify each other on the network.
 
 - **Purpose**: Capturing DNS traffic is useful for identifying which domain names are being queried by a machine. This can be useful for understanding what sites or services a device is trying to reach, which is often relevant in network forensics or troubleshooting domain resolution issues.
-- 
+
 <img width="879" alt="Screenshot 2024-10-16 at 08 37 28" src="https://github.com/user-attachments/assets/63c0fdc6-080c-4a15-9f34-dc3f54174cab">
 
 
@@ -251,7 +251,7 @@ Next, the example shows I have captured **ICMP (Internet Control Message Protoco
 ### Purpose:
 
 - This captures the exchange between your machine and Google’s DNS server, confirming network connectivity by sending a series of pings and receiving responses. I generated traffic by pinging.
-- 
+
 <img width="876" alt="Screenshot 2024-10-16 at 10 10 25" src="https://github.com/user-attachments/assets/2947af03-0d50-4874-ba11-c9eb10ad03a2">
 
 ### Summary of Project:
