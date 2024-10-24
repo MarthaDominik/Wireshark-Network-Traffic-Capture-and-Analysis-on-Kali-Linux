@@ -141,7 +141,7 @@ I pressed **Enter** to apply the filter, which displayed only HTTP packets.
 
 - Used before capturing.
 - Limit what is captured - allows to save specific types of traffic.
-- 
+  
 <img width="799" alt="Capture Filter" src="https://github.com/user-attachments/assets/d0df43ca-e116-4752-b9b9-dd67cde9be00">
 
 #### Display Filters
@@ -159,7 +159,7 @@ This filter I applied below is to show packets related to **TLS handshake Client
   - The client’s supported cryptographic algorithms (ciphers).
   - The server the client is trying to reach (indicated by the **SNI** field, which stands for Server Name Indication).
   - The IP address of the server (which helps identify the specific server that the client is connecting to).
-  - 
+    
 <img width="1045" alt="tls handshake type == 1" src="https://github.com/user-attachments/assets/137cbfe2-c9a1-4596-b5e0-a9f8443a6edf">
 
 - This filter below shows you **all packets** where either the **source IP** or the **destination IP** is `142.250.185.68`.
